@@ -1,0 +1,162 @@
+{
+
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/validate",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5241"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/validate",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/validate",
+      "DownstreamScheme": "http",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5241"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/validate1",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas",
+
+      "upstreamhttpmethod": [ "GET" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas1",
+
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "PUT",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas2",
+
+      "upstreamhttpmethod": [ "PUT" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "DELETE",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas3",
+
+      "upstreamhttpmethod": [ "DELETE" ]
+    },
+    {
+      "downstreampathtemplate": "/Author",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas4",
+
+      "upstreamhttpmethod": [ "GET" ]
+    },
+    {
+      "downstreampathtemplate": "/Author",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas5",
+
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/Author",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "PUT",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas6",
+
+      "upstreamhttpmethod": [ "PUT" ]
+    },
+    {
+      "downstreampathtemplate": "/Author",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "DELETE",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas7",
+
+      "upstreamhttpmethod": ["DELETE"]
+    }
+
+  ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5212"
+    }
+
+  
+
+}
