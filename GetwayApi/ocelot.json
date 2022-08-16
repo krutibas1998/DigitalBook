@@ -107,7 +107,7 @@
       "upstreamhttpmethod": [ "GET" ]
     },
     {
-      "downstreampathtemplate": "/Author",
+      "downstreampathtemplate": "/Author/insertBook",
       "downstreamscheme": "http",
       "DownstreamHttpMethod": "POST",
       "RouteIsCaseSensitive": false,
@@ -118,6 +118,21 @@
         }
       ],
       "upstreampathtemplate": "/api/Krutibas5",
+
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/Author/LogIn",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas8",
 
       "upstreamhttpmethod": [ "POST" ]
     },
@@ -149,7 +164,7 @@
       ],
       "upstreampathtemplate": "/api/Krutibas7",
 
-      "upstreamhttpmethod": ["DELETE"]
+      "upstreamhttpmethod": [ "DELETE" ]
     }
 
   ],

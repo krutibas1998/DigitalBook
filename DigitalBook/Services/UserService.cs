@@ -10,17 +10,7 @@ namespace DigitalBook.Services
         {
             _connectionDBContext = connectionDBContext;
         }
-        public string LogIn(List<User> users, User user)
-        {
-            if (users.Where(u => u.userName == user.userName && u.password == user.password).Count() == 0)
-            {
-                return "Ivalid User";
-            }
-            else
-            {
-                return "LogIn Sucessful";
-            }
-        }
+       
         //private readonly ConnectionDBContext _connectionDBContext;
 
         //public UserService(ConnectionDBContext connectionDBContext)
@@ -57,6 +47,7 @@ namespace DigitalBook.Services
                     userlist.userType = user.userType;
                     _connectionDBContext.SaveChanges();
                     result = "Details modified";
+                   
                 }
                 catch(Exception ex)
                 {

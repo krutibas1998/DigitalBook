@@ -9,7 +9,25 @@ namespace DigitalBook.Services
         public BookService (ConnectionDBContext connectionDBContext)
         {
             _connectionDBContext = connectionDBContext;
-        }   
+        }
+        //public string LogIn(List<User> users, User user)
+        //{
+        //    try
+        //    {
+        //        if (users.Where(u => u.userName == user.userName && u.password == user.password).Count() == 0)
+        //        {
+        //            return "Ivalid User";
+        //        }
+        //        else
+        //        {
+        //            return "LogIn Sucessful";
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return $"{ex.InnerException}";
+        //    }
+        //}
 
         public string AddBook(Book book)
         {
@@ -47,7 +65,7 @@ namespace DigitalBook.Services
                 }
                 catch(Exception Ex)
                 {
-                    result = $"BookId is not exists";
+                    result = $"BookId is not exists{Ex.Message}";
                 }
             }
             return result;
@@ -73,6 +91,18 @@ namespace DigitalBook.Services
             return result;
         }
 
-       
+        public string LogIn(User user)
+        {
+            
+            if (_connectionDBContext.Users.Where(u => u.userName == user.userName && u.password == user.password).Count() == 0)
+            {
+                return "Ivalid User";
+            }
+            else
+            {
+                return "LogIn Sucessful";
+            }
+            
+        }
     }
 }

@@ -30,12 +30,21 @@ namespace DigitalBook.Controllers
             return dBContext.Books.ToList();
         }
 
-        [HttpPost]
+        [HttpPost("insertBook")]
+            
+            
         public ActionResult<string> insertBook([FromBody] Book book)
         {
             string result = _bookServices.AddBook(book);
 
             return Ok(result);
+        }
+        [HttpPost("LogIn")]
+        public ActionResult<string> LogIn([FromBody] User user)
+        {
+            string result = _bookServices.LogIn(user);
+
+            return result;
         }
 
         [HttpPut]
