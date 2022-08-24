@@ -17,20 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ITokenService>(new TokenService());
-
-//builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
-//{
-//    options.TokenValidationParameters = new()
-//    {
-//        ValidateIssuer = true,
-//        ValidateAudience = true,
-//        ValidateIssuerSigningKey = true,
-//        ValidAudience = builder.Configuration["Authentication:audience"],
-//        ValidIssuer = builder.Configuration["Authentication:issuer"],
-//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Authentication:securityKey"]))
-//    };
-//});
-
+builder.Services.AddCors((setup) =>
+{
+    setup.AddPolicy("default", (options) =>
+    {
+        options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -70,7 +63,7 @@ app.MapPost("/validate", [AllowAnonymous] (UserValidationRequestModel request, H
 })
 .WithName("validate");
 
-
+app.UseCors("default");
 app.UseHttpsRedirection();
 app.UseAuthentication();    
 app.UseAuthorization();

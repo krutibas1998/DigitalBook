@@ -10,24 +10,7 @@ namespace DigitalBook.Services
         {
             _connectionDBContext = connectionDBContext;
         }
-        //public string LogIn(List<User> users, User user)
-        //{
-        //    try
-        //    {
-        //        if (users.Where(u => u.userName == user.userName && u.password == user.password).Count() == 0)
-        //        {
-        //            return "Ivalid User";
-        //        }
-        //        else
-        //        {
-        //            return "LogIn Sucessful";
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        return $"{ex.InnerException}";
-        //    }
-        //}
+  
 
         public string AddBook(Book book)
         {

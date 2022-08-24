@@ -92,6 +92,51 @@
       "upstreamhttpmethod": [ "DELETE" ]
     },
     {
+      "downstreampathtemplate": "/api/Reader/GetAllBook",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas9",
+
+      "upstreamhttpmethod": [ "GET" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader/SearchBooks",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas10",
+
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Reader/BuyBook",
+      "downstreamscheme": "http",
+      "DownstreamHttpMethod": "POST",
+      "RouteIsCaseSensitive": false,
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": "5242"
+        }
+      ],
+      "upstreampathtemplate": "/api/Krutibas11",
+
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
       "downstreampathtemplate": "/Author",
       "downstreamscheme": "http",
       "DownstreamHttpMethod": "GET",

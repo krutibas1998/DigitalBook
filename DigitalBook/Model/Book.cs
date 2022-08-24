@@ -7,7 +7,7 @@ namespace DigitalBook.Model
         [Key]
         public long bookId { get; set; } 
         public byte[]? logo { get; set; }
-        public string? title { get; set; }
+        public string ?title { get; set; }
         public string? category { get; set; }
         public int price { get; set; }
         public long authorId { get; set; }

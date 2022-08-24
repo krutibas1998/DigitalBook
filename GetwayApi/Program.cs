@@ -9,6 +9,13 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("ocelot.json");
 builder.Services.AddOcelot().AddPolly();
+builder.Services.AddCors((setup) =>
+{
+    setup.AddPolicy("default", (options) =>
+    {
+        options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+    });
+});
 
 // Add services to the container.
 
@@ -29,8 +36,6 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Authentication:Key"]))
     };
 });
-//builder.Services.AddOcelot().AddPolly();
-//builder.Configuration.AddJsonFile("ocelot.json");
 
 var app = builder.Build();
 
@@ -40,6 +45,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("default");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

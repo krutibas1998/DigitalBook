@@ -16,9 +16,7 @@ namespace TokenBaseAuth.Services
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.UniqueName, userName),
-                //new Claim("userName", userName),
-                //new Claim("password",password),
-                //new Claim("userType", userType)
+                
             };
             claims.AddRange(audience.Select(aud => new Claim(JwtRegisteredClaimNames.Aud, aud)));
 

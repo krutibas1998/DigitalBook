@@ -2,7 +2,7 @@ using DigitalBook.Model;
 using DigitalBook.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace DigitalBook.Controllers
 {
@@ -11,12 +11,11 @@ namespace DigitalBook.Controllers
     [Route("[controller]")]
     public class AuthorController : ControllerBase
     {
-        //public static List<Book> books = new List<Book>();
+        
 
         private readonly ConnectionDBContext dBContext;
         private readonly IBookService _bookServices;
 
-        //public ConnectionDBContext dBContext { get; }
 
         public AuthorController(IBookService bookServices, ConnectionDBContext dBContext)
         {
@@ -29,13 +28,25 @@ namespace DigitalBook.Controllers
         {
             return dBContext.Books.ToList();
         }
-
+         
         [HttpPost("insertBook")]
             
             
         public ActionResult<string> insertBook([FromBody] Book book)
         {
+           // var identity = HttpContext.User.Identities as ClaimsIdentity;
             string result = _bookServices.AddBook(book);
+            //if (identity == null)
+            //{
+            //    return Unauthorized("You don't have permission!!");
+            //}
+            //AppClaims appClaims = new AppClaims(identity);
+            //if (appClaims.userType.ToUpper() != "A")
+            //{
+            //    return Unauthorized("You don't have permission!!");
+            //}
+
+            //string result = _bookServices.AddBook(book);
 
             return Ok(result);
         }

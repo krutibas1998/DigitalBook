@@ -10,14 +10,33 @@ namespace DigitalBook.Services
         {
             _connectionDBContext = connectionDBContext;
         }
-       
-        //private readonly ConnectionDBContext _connectionDBContext;
+        public List<Book> SearchBook(Book book)
+        {
+            //string result = string.Empty;
+            return _connectionDBContext.Books.Where(x => (x.price == book.price || x.category == book.category && x.title == book.title)).ToList();
+           
+        }
 
-        //public UserService(ConnectionDBContext connectionDBContext)
-        //{
-        //    _connectionDBContext = connectionDBContext;
-        //}
 
+        public string Buy(Payment payment)
+        {
+            string result = string.Empty;
+            try
+            {
+                payment.payment = DateTime.Now;
+               _connectionDBContext.Payments.Add(payment);
+                _connectionDBContext.SaveChanges();
+                result = "Book Purchasr Successfull";
+                    
+            }
+            catch(Exception ex)
+            {
+                result = result = $"Book Purchasr Not Successfull{ex.Message}";
+                
+            }
+            return result;
+        }
+      
         public string AddUser(User user)
         {
             string result = string.Empty;
@@ -82,6 +101,5 @@ namespace DigitalBook.Services
             }
             return result;
         }
-
     }
 }

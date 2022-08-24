@@ -3,17 +3,17 @@ using DigitalBook.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace DigitalBook.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ReaderController : ControllerBase
     {
-        //private readonly IEnumerable<Claim> _claims;
-        //public static List<User> userlist = new List<User>();
+       
         private readonly ConnectionDBContext dbContext;
         private readonly IUserService _userService;
 
@@ -21,18 +21,38 @@ namespace DigitalBook.Controllers
         {
             _userService = userService;
             this.dbContext = dbContext;
-            //_claims = (HttpContext.User.Identity as ClaimsIdentity).Claims;
+            
+        }
+        [HttpGet("GetAllBook")]
+        public List<Book> GetBook()
+        {
+            return dbContext.Books.ToList();
+        }
+        [HttpPost("SearchBooks")]
+        public List<Book> SearchBook([FromBody] Book book)
+        {
+            try
+            {
+               return _userService.SearchBook(book);
+            }
+            catch(Exception ex)
+            {
+                return new List<Book>();
+            }
+            
+            
+        }
+        [HttpPost("BuyBook")]
+        public ActionResult<string> BuyBook([FromBody] Payment payment)
+        {
+            string result = _userService.Buy(payment);
+
+            return Ok(result);
         }
 
         [HttpGet]
         public List<User> GetUser()
         {
-            //var identity = HttpContext.User.Identity as ClaimsIdentity;
-            //if (identity != null)
-            //{
-            //    IEnumerable<Claim> claim = identity.Claims;
-            //    string userType = identity.FindFirst("userType").Value.ToString();
-            //}
 
             return dbContext.Users.ToList();
         }
