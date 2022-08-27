@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalBook", "DigitalBook\DigitalBook.csproj", "{260C40A3-007B-4D55-875E-EBF99AA9ADFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalBook", "DigitalBook\DigitalBook.csproj", "{260C40A3-007B-4D55-875E-EBF99AA9ADFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenBaseAuth", "TokenBaseAuth\TokenBaseAuth.csproj", "{6B646326-9EC1-41D7-9C04-18FA4BFB22C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenBaseAuth", "TokenBaseAuth\TokenBaseAuth.csproj", "{6B646326-9EC1-41D7-9C04-18FA4BFB22C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetwayApi", "GetwayApi\GetwayApi.csproj", "{57199952-1FC0-40B8-A716-BDCFFC5DC18F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetwayApi", "GetwayApi\GetwayApi.csproj", "{57199952-1FC0-40B8-A716-BDCFFC5DC18F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabbitmq", "Rabbitmq\Rabbitmq.csproj", "{3A825D7A-1B5E-4DA5-A317-4155CB624014}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{57199952-1FC0-40B8-A716-BDCFFC5DC18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57199952-1FC0-40B8-A716-BDCFFC5DC18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57199952-1FC0-40B8-A716-BDCFFC5DC18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A825D7A-1B5E-4DA5-A317-4155CB624014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A825D7A-1B5E-4DA5-A317-4155CB624014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A825D7A-1B5E-4DA5-A317-4155CB624014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A825D7A-1B5E-4DA5-A317-4155CB624014}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
